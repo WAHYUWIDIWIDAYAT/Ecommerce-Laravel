@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+.container-fluid{
+	padding: 0;
+}
+.carousel-item {
+  	height: 80vh;
+  	min-height: 350px;
+  	background: no-repeat center center scroll;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+.jumbotron{
+	margin-top: 30px;
+	margin-left: 30px;
+	margin-right: 30px;
+	background-color: white;
+}
+.carousel-caption{
+	left:-450px;
+	top:200px;
+	position: absolute;
+}
+@media screen and (max-width: 960px) {
+	.card{
+		width: 500px;
+	}
+}

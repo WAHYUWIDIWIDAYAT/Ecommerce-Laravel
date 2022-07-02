@@ -1,0 +1,145 @@
+<!doctype html>
+<!--Nama : Wahyu widi widayat -->
+<!-- Nim : A11.2019.12052 -->
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>LARASHOP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+@yield('title')
+<link rel="stylesheet" href="{{ asset('UserInterface/bootstrap/css/bootstrap.min.css') }}"/>
+<link rel="stylesheet" href="{{ asset('UserInterface/style/style.css') }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+@yield('css')
+</head>
+<body>
+<div id="container-fluid">
+<div class="container-fluid">
+<!--- ECOMMERCE.BLADE.PHP --->	
+		
+		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				 <ul class="navbar-nav ml-auto">
+					@if (auth()->guard('customer')->check())
+					<li class="nav-item">
+						<a class="nav-link" href="{{ route('customer.logout') }}" style="color:white;">Logout</a>
+					</li>
+					@else
+					<li class="nav-item">
+						<a class="nav-link" href="{{ route('customer.login') }}" style="color:white;">Login</a>
+					</li>
+					@endif
+					<li class="nav-item">
+						<a class="nav-link" href="{{ route('customer.dashboard') }}" style="color:white;">My Account</a>
+					</li>		
+				</ul>
+			 </div>
+		</nav>
+		@include('layouts.ecommerce.module.menu')
+		</div>
+		</div>
+  	<header>
+  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    	<ol class="carousel-indicators">
+      		<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      		<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      		<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    	</ol>
+    	<div class="carousel-inner" role="listbox">
+			<div class="carousel-item active" style="background-image:url('UserInterface/assets/img/banner-03.png')">
+			  <div class="carousel-caption d-none d-md-block">
+				<h2 class="display-4"><strong>E-Health</strong></h2>
+				<p class="lead"><strong>Market Health For Everyone</strong></p>
+			  </div>
+			</div>
+			<div class="carousel-item" style="background-image: url('UserInterface/assets/img/banner-01.jpg')">
+			</div>
+			<div class="carousel-item" style="background-image: url('UserInterface/assets/img/banner-02.jpg')">
+			</div>
+		</div>
+    	<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          	<span class="sr-only">Previous</span>
+        	</a>
+    	<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          	<span class="carousel-control-next-icon" aria-hidden="true"></span>
+          	<span class="sr-only">Next</span>
+        	</a>
+  	</div>
+</header>
+	<div class="container" style="margin-top: 30px;">
+		<div class="row">
+  			<div class="col"><a href="#" style="text-decoration: none; color: black">Order</a></div>
+  			<div class="col"><a href="#" style="text-decoration: none; color: black">Pengiriman</a></div>
+  			<div class="col"><a href="#" style="text-decoration: none; color: black">Category</a></div>
+  			<div class="col"><a href="#" style="text-decoration: none; color: black">Stock</a></div>  
+  			<div class="col"><a href="#" style="text-decoration: none; color: black">Info</a></div>
+  			<div class="col"><a href="#" style="text-decoration: none; color: black">Live Contact</a></div>
+  			
+		</div>
+	</div>
+
+	<!--- INDEX.BLADE.PHP ECOMMERCE--->
+	@yield('content')
+
+	<!--- --->
+	<a href="#" style="color:white; text-decoration: none;"><div class="jumbotron" style="background-image: url('UserInterface/assets/img/m-blog-4.jpg'); background-size: cover;">
+  		<h1>LaraShop</h1>
+  		<p>What ever you need us , we always ready for you.</p>
+	</div></a>
+		<div class="container" style="margin-top: 30px">
+		<div class="row">
+  			<div class="col">
+			<a href="#" style="color:white; text-decoration: none;"><div class="jumbotron" style="background-image: url('UserInterface/assets/img/m-blog-4.jpg'); background-size: cover;">
+  				<h1>LaraShop</h1>
+  				<p>Your complain is support to us. so dont worry to complain</p>
+			</div></a>
+			</div>
+  			<div class="col">
+			<a href="#" style="color:white; text-decoration: none;"><div class="jumbotron" style="background-image: url('UserInterface/assets/img/m-blog-4.jpg'); background-size: cover;">
+  				<h1>LaraShop</h1>
+  				<p>What ever you need us , we always ready for you.</p>
+			</div></a>
+			</div>
+		</div>
+	</div>
+	<a href="#" style="color:white; text-decoration: none;"><div class="jumbotron" style="background-image: url('UserInterface/assets/all-bg-title.jpg'); background-size: cover; ">
+  		<h1>LaraShop</h1>
+  		<p>What ever you need us , we always ready for you.</p>
+	</div></a>
+	</div>
+	<footer class="text-muted" style="clear: both;">
+    <hr>
+    <div class="container">
+        <p class="float-right">
+            <a href="#container">Back to top</a>
+        </p>
+        <p>Copyright 2020 @ wahyuwidi</p>
+    </div>
+</footer>
+</div>
+<script src="{{ asset('UserInterface/bootstrap/js/jquery.js')}}"></script> 
+<script src="{{ asset('UserInterface/bootstrap/js/popper.js')}}"></script> 
+<script src="{{ asset('UserInterface/bootstrap/js/jquery.slim.min.js')}}"></script>
+<script src="{{ asset('UserInterface/bootstrap/js/jquery.min.js')}}"></script>
+<script src="{{ asset('UserInterface/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ asset('UserInterface/bootstrap/js/bootstrap.js')}}"></script>
+<script src="{{ asset('ecommerce/js/jquery-3.2.1.min.js') }}"></script>
+	<script src="{{ asset('ecommerce/js/popper.js') }}"></script>
+	<script src="{{ asset('ecommerce/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('ecommerce/js/stellar.js') }}"></script>
+	<script src="{{ asset('ecommerce/vendors/lightbox/simpleLightbox.min.js') }}"></script>
+	<script src="{{ asset('ecommerce/vendors/nice-select/js/jquery.nice-select.min.js') }}"></script>
+	<script src="{{ asset('ecommerce/vendors/isotope/imagesloaded.pkgd.min.js') }}"></script>
+	<script src="{{ asset('ecommerce/vendors/isotope/isotope-min.js') }}"></script>
+	<script src="{{ asset('ecommerce/vendors/owl-carousel/owl.carousel.min.js') }}"></script>
+	<script src="{{ asset('ecommerce/js/jquery.ajaxchimp.min.js') }}"></script>
+	<script src="{{ asset('ecommerce/vendors/counter-up/jquery.waypoints.min.js') }}"></script>
+	<script src="{{ asset('ecommerce/vendors/flipclock/timer.js') }}"></script>
+	<script src="{{ asset('ecommerce/vendors/counter-up/jquery.counterup.js') }}"></script>
+	<script src="{{ asset('ecommerce/js/mail-script.js') }}"></script>
+	<script src="{{ asset('ecommerce/js/theme.js') }}"></script>
+@yield('js')
+</body>
+</html>
