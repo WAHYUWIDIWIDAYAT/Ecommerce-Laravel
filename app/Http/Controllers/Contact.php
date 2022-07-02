@@ -23,16 +23,16 @@ class Contact extends Controller
         try {
             $mail = new PHPMailer();
             $mail->IsSMTP();
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = 'yourhost';
             $mail->SMTPAuth = true;
-            $mail->Username = 'codinger.me.me@gmail.com';
-            $mail->Password = 'widiw598';
+            $mail->Username = 'yourusername';
+            $mail->Password = 'yourpassword';
             $mail->SMTPSecure = 'ssl';
             $mail->Port = 465;
 
             $mail->setFrom("e-health@health.care", "Admin E-Health");
 
-            $mail->addAddress('codinger.me.me@gmail.com', 'E-health'); 
+            $mail->addAddress('youremail', 'E-health'); 
             $mail->addReplyTo($emailAddress, $name);
 
             $mail->isHTML(true);
