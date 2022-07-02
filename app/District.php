@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class City extends Model
+class District extends Model
 {
-    public function province()
+    public function city()
     {
-        return $this->belongsTo(Province::class);
+        return $this->belongsTo(City::class);
     }
 }
